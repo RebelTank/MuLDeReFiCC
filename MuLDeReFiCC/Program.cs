@@ -23,12 +23,11 @@ namespace MuLDeReFiCC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Form1());
-            Application.Run(new PopDB());
-=======
-            Application.Run(new Music_List());
->>>>>>> origin/master
+
+            //Application.Run(new Form1());
+            new PopDB();
+            //Application.Run(new Music_List());
+
         }
     }
 }
