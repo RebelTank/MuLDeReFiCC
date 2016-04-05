@@ -16,5 +16,32 @@ namespace MuLDeReFiCC
         {
             InitializeComponent();
         }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            Music_List ml = new Music_List();
+            ml.Show();
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            string folder = string.Empty;
+            Music_List ml;
+
+            //To make it expand the music folder, roll your own browser class.
+            FolderBrowserDialog folderBD = new FolderBrowserDialog();
+            folderBD.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            DialogResult dr = new DialogResult();
+            dr = folderBD.ShowDialog();
+
+            if (dr == DialogResult.OK)
+                folder = folderBD.SelectedPath;
+
+            if (!string.IsNullOrEmpty(folder))
+            {
+                ml = new Music_List(folder);
+                ml.ShowDialog();
+            }
+        }
     }
 }

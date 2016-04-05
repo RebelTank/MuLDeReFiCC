@@ -24,8 +24,8 @@ namespace MuLDeReFiCC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new Form1());
-            new PopDB();
+            Application.Run(new Form1());
+            //new PopDB();
             //Application.Run(new Music_List());
 
         }
