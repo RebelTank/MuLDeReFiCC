@@ -1,0 +1,32 @@
+﻿create table Song
+(
+SongID int identity(1,1)
+, Name varchar(255)
+, AlbumID int
+, ArtistID int
+, PlayLength time
+, FileSize bigint
+, FileAddress varchar(255)
+, GenreID int
+, BitRate int
+, FileTypeID int
+, TimeSignatureID int
+, AudioPeak float
+, AudioValley float
+, Lyrics varchar(255)
+, FileNameData varchar(255)
+, Rating tinyint
+, Subtitle varchar(255)
+, Comments varchar(255)
+, ArtistsContrib varchar(255)
+, TrackNo smallint
+, ParentalRating varchar(255)
+, IsExplicit bit
+, Composers varchar(255)
+, Conductors varchar(255)
+, MoodID int
+, InitialKeyID int
+, BPM float
+, Protected bit
+, LastUpdatedHash varbinary
+);
