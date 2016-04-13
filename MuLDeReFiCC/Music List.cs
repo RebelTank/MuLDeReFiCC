@@ -9,6 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//get directory to search
+//search directory for music files
+//place each music file found in the database
+
+//Is folder a valid directory?
+//Read all files and folders under folder and place full directory, file name, and extension into db
+//if file extension is mp3, ogg, mp4, etc...
+//fill out file info including hash and last pulled?
+
 namespace MuLDeReFiCC
 {
     public partial class Music_List : Form
@@ -34,8 +43,14 @@ namespace MuLDeReFiCC
             //Open folder
             foreach (string file in Directory.EnumerateFiles(folder))
             {
-                //length + 1 to remove opening \
-                label1.Text += file.Substring(folder.Length + 1) + "\n";
+                //length + 1 to remove opening '\'
+                string filename = file.Substring(folder.Length + 1);
+
+                //get enumerable list of extensions from db and compare against all of them
+                if ((filename.Split('.').Length > 1) &&
+                    filename.ToLower().EndsWith(".mp3", StringComparison.Ordinal))
+                    //parse on . and see if file is music type
+                    label1.Text += filename + "\n";
             }
         }
     }
