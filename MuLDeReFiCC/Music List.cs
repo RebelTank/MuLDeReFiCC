@@ -28,7 +28,7 @@ namespace MuLDeReFiCC
             //this.label1.Text = "here we are\nstuff";
 
             //Read in a folder and show it in label1.Text
-            ExploreFolder(@"C:\Users\Steven\Music\Apocalyptica");
+            ExploreFolder(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
         }
 
         public Music_List(string folder)
