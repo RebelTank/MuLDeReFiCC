@@ -40,6 +40,8 @@ namespace MuLDeReFiCC
 
         private void ExploreFolder(string folder)
         {
+            string something = Common.getFileExtensions();
+
             //Open folder
             foreach (string file in Directory.EnumerateFiles(folder))
             {
