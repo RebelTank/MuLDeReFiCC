@@ -40,8 +40,6 @@ namespace MuLDeReFiCC
 
         private void ExploreFolder(string folder)
         {
-            string something = Common.getFileExtensions();
-
             //Open folder
             foreach (string file in Directory.EnumerateFiles(folder))
             {
@@ -49,8 +47,7 @@ namespace MuLDeReFiCC
                 string filename = file.Substring(folder.Length + 1);
 
                 //get enumerable list of extensions from db and compare against all of them
-                if ((filename.Split('.').Length > 1) &&
-                    filename.ToLower().EndsWith(".mp3", StringComparison.Ordinal))
+                if ((filename.Split('.').Length > 1) && Common.IsMusicFile(filename))
                     //parse on . and see if file is music type
                     label1.Text += filename + "\n";
             }
